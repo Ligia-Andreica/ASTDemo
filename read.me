@@ -1,0 +1,32 @@
+https://prezi.com/view/EGl5uMfDeIb0QtRYIWbY/
+
+1. Run the app: node run run.js
+
+2. AST visualization: https://astexplorer.net/
+   var a = 42;
+   function inc(var1, var2) {
+   	return var1++;
+   }
+   inc(a);
+
+3. JSX Transform example: https://astexplorer.net/
+
+function myComponent() {
+	return <div seleniumId='ast_demo_component' style={{'color': 'green'}}>
+      AST DEMO
+    </div>
+}
+
+export default function({ Plugin, types: t }) {
+  return new Plugin("ast-transform", {
+    visitor: {
+      JSXOpeningElement(node) {
+        node.attributes = node.attributes.filter(attribute => {
+          if (attribute.name.name === "seleniumId")
+            return false;
+          return true;
+        });
+      }
+    }
+  });
+}

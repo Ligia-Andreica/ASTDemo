@@ -1,0 +1,11 @@
+{
+  "name": "ast_demo",
+  "version": "1.0.0",
+  "description": "AST manipulation demo (immutable.js)",
+  "main": "src/run.js",
+  "scripts": {},
+  "author": "Ligia Andreica",
+  "devDependencies": {
+    "babel-core": "^6.25.0"
+  }
+}
